@@ -1,41 +1,32 @@
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Circular+Std:wght@400;500;700&family=Raleway:wght@400;500;700&display=swap');
 
+:root {
   --airbnb-red: #ff385c;
   --airbnb-dark-red: #e61e4d;
-  --airbnb-light-red: #ff5a5f;
   --text-primary: #222;
   --text-secondary: #484848;
   --text-light: #717171;
   --bg-light: #f7f7f7;
   --bg-white: #ffffff;
   --border-color: #ebebeb;
-  --shadow-light: 0 1px 2px rgba(0,0,0,0.08);
-  --shadow-medium: 0 4px 12px rgba(0,0,0,0.12);
-  --shadow-large: 0 8px 16px rgba(0,0,0,0.16);
-  
-
-  --space-xs: 0.5rem;
+  --shadow-light: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.12);
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 2rem;
-  --space-xl: 3rem;
-  
-
-  --radius-sm: 4px;
+  --space-xl: 4rem;
   --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-full: 50%;
+  --radius-sm: 4px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 body {
-  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: 'Raleway', 'Circular Std', sans-serif;
   background-color: var(--bg-white);
   color: var(--text-primary);
   line-height: 1.6;
@@ -44,10 +35,9 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 1rem 2rem;
-  background-color: white;
-  border-bottom: 1px solid #ebebeb;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -60,21 +50,14 @@ body {
 
 .header__logo {
   height: 32px;
-  width: auto;
   object-fit: contain;
-}
-
-
-.header__logo:hover {
-  transform: scale(1.1);
 }
 
 .header__title {
   font-size: 1.8rem;
-  color: var(--airbnb-red);
-  margin: 0;
   font-weight: 700;
-  letter-spacing: -0.5px;
+  color: var(--airbnb-red);
+  margin-left: 0.5rem;
 }
 
 .header__nav {
@@ -93,7 +76,6 @@ body {
   color: var(--text-primary);
   font-weight: 500;
   font-size: 0.95rem;
-  padding: var(--space-xs) 0;
   position: relative;
 }
 
@@ -104,7 +86,7 @@ body {
 .nav__link::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
@@ -116,48 +98,8 @@ body {
   width: 100%;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Circular+Std:wght@400;500;700&display=swap');
-
-.btn {
-  border: none;
-  padding: 12px 24px;
-  font-size: 1rem;
-  border-radius: 24px; 
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: var(--shadow-light);
-  font-family: 'Circular Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  text-transform: capitalize;
-  letter-spacing: 0.2px;
-}
-
-.btn-primary {
-  background-color: var(--airbnb-red);
-  color: var(--bg-white);
-}
-
-.btn-primary:hover {
-  background-color: var(--airbnb-dark-red);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--airbnb-red);
-  border: 1px solid var(--airbnb-red);
-}
-
-.btn-secondary:hover {
-  background-color: rgba(255, 56, 92, 0.1);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-light);
-}
-
 .section {
   padding: var(--space-xl) 0;
-  scroll-margin-top: 80px; 
 }
 
 .section__content {
@@ -171,7 +113,6 @@ body {
   margin-bottom: var(--space-md);
   color: var(--airbnb-red);
   position: relative;
-  display: inline-block;
 }
 
 .section__title::after {
@@ -192,7 +133,8 @@ body {
   margin-bottom: var(--space-md);
 }
 
-.about {
+.about,
+.contact {
   background-color: var(--bg-light);
 }
 
@@ -212,8 +154,8 @@ body {
   border-radius: var(--radius-md);
   padding: var(--space-md);
   box-shadow: var(--shadow-light);
-  transition: all 0.3s ease;
   border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -223,7 +165,7 @@ body {
 
 .card h3 {
   color: var(--airbnb-red);
-  margin-bottom: var(--space-xs);
+  margin-bottom: 0.5rem;
 }
 
 .card p {
@@ -231,26 +173,28 @@ body {
   font-size: 0.95rem;
 }
 
-.contact {
-  background-color: var(--bg-light);
-}
-
 .contact-form {
   max-width: 600px;
   margin-top: var(--space-md);
 }
 
-.form-input, .form-textarea {
-  width: 100%;
-  padding: var(--space-xs) var(--space-sm);
-  margin-bottom: var(--space-sm);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  font-family: inherit;
-  transition: border-color 0.3s ease;
+.form-input,
+.form-textarea,
+.btn {
+  transition: all 0.3s ease;
 }
 
-.form-input:focus, .form-textarea:focus {
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin-bottom: var(--space-sm);
+  border: 1px solid var(--border-color);
+  font-family: inherit;
+}
+
+.form-input:focus,
+.form-textarea:focus {
   outline: none;
   border-color: var(--airbnb-red);
 }
@@ -260,50 +204,41 @@ body {
   resize: vertical;
 }
 
-@media (max-width: 768px) {
-  .header {
-    padding: var(--space-sm) var(--space-md);
-    flex-direction: column;
-    gap: var(--space-sm);
-  }
-  
-  .header__nav {
-    width: 100%;
-    justify-content: space-between;
-    margin-top: var(--space-sm);
-  }
-  
-  .nav__links {
-    gap: var(--space-md);
-  }
-  
-  .section {
-    padding: var(--space-lg) 0;
-  }
-  
-  .section__title {
-    font-size: 2rem;
-  }
-  
-  .service-cards {
-    grid-template-columns: 1fr;
-  }
+.btn {
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 24px;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: var(--shadow-light);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-@media (max-width: 480px) {
-  .header__title {
-    font-size: 1.5rem;
-  }
-  
-  .nav__links {
-    gap: var(--space-sm);
-  }
-  
-  .section__title {
-    font-size: 1.8rem;
-  }
-  
-  .section__text {
-    font-size: 1rem;
-  }
+.btn-primary {
+  background-color: var(--airbnb-red);
+  color: var(--bg-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--airbnb-dark-red);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--airbnb-red);
+  border: 1px solid var(--airbnb-red);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 56, 92, 0.1);
+}
+
+footer {
+  padding: 2rem 1rem;
+  background-color: var(--bg-white);
+  font-size: 0.85rem;
+  color: var(--text-light);
+  text-align: center;
 }
