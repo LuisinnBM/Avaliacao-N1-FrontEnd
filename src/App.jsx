@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header';
-import About from './components/About';
-import Services from './components/Services';
-import Contact from './components/Contact';
+import Header from './components/header';
+import About from './components/about';
+import Services from './components/services';
+import Contact from './components/contact';
 
 function App() {
   return (
