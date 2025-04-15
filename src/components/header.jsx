@@ -1,14 +1,21 @@
 function Header() {
   return (
-    <header>
-      <section class = "header__section">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8fYsTmR0-TXLa06mx13LRXBgbNyBgylU3cw&s" alt="Logo do airbnb" />
-        <h1>airbnb</h1>
-      </section>
-      <nav>
-        <a href="#about">Sobre</a>
-        <a href="#services">Serviços</a>
-        <a href="#contact">Contato</a>
+    <header className="header">
+      <div className="header__logo-container">
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" 
+          alt="Logo do Airbnb" 
+          className="header__logo"
+        />
+      </div>
+      
+      <nav className="header__nav">
+        <div className="nav__links">
+          <a href="#about" className="nav__link">Sobre</a>
+          <a href="#services" className="nav__link">Serviços</a>
+          <a href="#contact" className="nav__link">Contato</a>
+        </div>
+        <button className="btn btn-primary">Cadastre-se</button>
       </nav>
     </header>
   );
